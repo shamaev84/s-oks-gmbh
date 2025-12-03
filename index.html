@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S&amp;Oks GmbH – Bau, Sanierung, Reinigung &amp; Rohrservice</title>
+  <meta name="description" content="S&Oks GmbH – Ihr Partner für Bau, Komplett- und Kernsanierung, Wohnungs- und Hausausbau, Gebäudereinigung, Baureinigung, Rohrreinigung, Verstopfungsbeseitigung sowie Abriss und Entsorgung in Burgstädt und Umgebung.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #111827;
+      background-color: #f3f4f6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #111827ee;
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      opacity: 0.85;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .nav-phone a {
+      background: #ef4444;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-phone span {
+      font-size: 1.1rem;
+    }
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      color: white;
+      padding: 60px 0 50px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3.2vw + 1rem, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 18px;
+      color: #e5e7eb;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary {
+      background: #ef4444;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      padding: 9px 16px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .hero-hint {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .hero-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid #374151;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-row + .hero-card-row {
+      border-top: 1px dashed #374151;
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    .hero-card-label {
+      color: #9ca3af;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-card-value {
+      font-weight: 600;
+    }
+
+    .hero-card-phone {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f97316;
+    }
+
+    .hero-card-small {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 6px;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 0;
+    }
+
+    section:nth-of-type(even) {
+      background: #e5e7eb;
+    }
+
+    h2.section-title {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      text-align: center;
+      color: #4b5563;
+      font-size: 0.98rem;
+    }
+
+    /* Services */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 16px 16px 18px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .card ul li + li {
+      margin-top: 4px;
+    }
+
+    /* About & Area */
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .two-cols h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .two-cols p,
+    .two-cols ul {
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .two-cols ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .two-cols ul li + li {
+      margin-top: 2px;
+    }
+
+    /* Kontakt */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 14px;
+      padding: 18px 16px 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .contact-box p + p {
+      margin-top: 4px;
+    }
+
+    .contact-box strong {
+      color: #111827;
+    }
+
+    .contact-highlight {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 2px;
+      display: inline-block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button[type="submit"] {
+      margin-top: 4px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: none;
+      font: inherit;
+      font-weight: 600;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      background: #030712;
+      color: #9ca3af;
+      font-size: 0.8rem;
+      padding: 14px 0 18px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .two-cols,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .nav-links {
+        font-size: 0.85rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">S&amp;Oks GmbH</div>
+    <nav class="nav-links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#einsatzgebiet">Einsatzgebiet</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-phone">
+      <a href="tel:+4917624196776">
+        <span>📞</span> Jetzt anrufen: 0176 24196776
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Bau, Sanierung, Reinigung &amp; Rohrservice aus einer Hand</h1>
+        <p class="hero-subtitle">
+          S&amp;Oks GmbH in Burgstädt – von der Komplett- und Kernsanierung über Wohnungs- und Dachausbau
+          bis hin zu Gebäudereinigung, Baureinigung, Rohrreinigung, Verstopfungsbeseitigung sowie Abriss und Entsorgung.
+        </p>
+        <div class="hero-badges">
+          <div class="badge">Bau &amp; Sanierung</div>
+          <div class="badge">Reinigung &amp; Rohrservice</div>
+          <div class="badge">Abriss &amp; Entsorgung</div>
+        </div>
+        <div class="hero-actions">
+          <a href="tel:+4917624196776" class="btn-primary">Telefon: 0176 24196776</a>
+          <a href="#kontakt" class="btn-secondary">Anfrage für Ihr Projekt</a>
+        </div>
+        <p class="hero-hint">
+          Egal ob kleine Wohnung, Einfamilienhaus oder komplettes Objekt – wir begleiten Sie von A bis Z.
+        </p>
+      </div>
+
+      <aside class="hero-card" aria-label="Kontakt-Infos">
+        <h2>Ihr Ansprechpartner</h2>
+
+        <div class="hero-card-row">
+          <div>
+            <div class="hero-card-label">Telefon</div>
+            <div class="hero-card-phone">
+              <a href="tel:+4917624196776">0176 24196776</a>
+            </div>
+          </div>
+          <div>
+            <div class="hero-card-label">E-Mail</div>
+            <div class="hero-card-value">
+              <a href="mailto:s.oks.gmbh@hotmail.com">s.oks.gmbh@hotmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-row">
+          <div>
+            <div class="hero-card-label">Standort</div>
+            <div class="hero-card-value">Siedlungsstraße 1, 09217 Burgstädt</div>
+          </div>
+          <div>
+            <div class="hero-card-label">Firma</div>
+            <div class="hero-card-value">S&amp;Oks GmbH</div>
+          </div>
+        </div>
+
+        <p class="hero-card-small">
+          Wir erstellen Ihnen gerne ein individuelles Angebot für Bau, Sanierung, Reinigung oder Rohrarbeiten.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <p class="section-intro">
+        Mit unserem Team decken wir ein breites Spektrum rund um Bau, Sanierung, Reinigung und Rohrservice ab.
+        So haben Sie einen Ansprechpartner für viele Gewerke.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Bau &amp; Komplett-/Kernsanierung</h3>
+          <p>Wir begleiten Sie von der Planung bis zur fertigen Immobilie.</p>
+          <ul>
+            <li>Komplettsanierung von Wohnungen und Häusern</li>
+            <li>Kernsanierung von Bestandsgebäuden</li>
+            <li>Koordination verschiedener Gewerke</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Wohnungs- &amp; Hausausbau</h3>
+          <p>Mehr Platz und Komfort durch gezielten Ausbau.</p>
+          <ul>
+            <li>Innenausbau von Wohnungen und Häusern</li>
+            <li>Umbau und Modernisierung</li>
+            <li>Gestaltung nach Ihren Wünschen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Dachausbau</h3>
+          <p>Wir machen Ihr Dachgeschoss zum nutzbaren Wohnraum.</p>
+          <ul>
+            <li>Dachbodenausbau</li>
+            <li>Trockenbau und Dämmung</li>
+            <li>Vorbereitung für weitere Gewerke</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Gebäudereinigung &amp; Baureinigung</h3>
+          <p>Sauberkeit für bewohnte Objekte und Baustellen.</p>
+          <ul>
+            <li>Gebäudereinigung im Innenbereich</li>
+            <li>Baureinigung nach Umbau/Sanierung</li>
+            <li>Entfernung von Bauschutt und Staub</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Rohrreinigung &amp; Verstopfungen</h3>
+          <p>Schnelle Hilfe bei Verstopfungen im ganzen Haus.</p>
+          <ul>
+            <li>Rohrreinigung in Bad, Küche, WC</li>
+            <li>Verstopfung beseitigen in Abflüssen &amp; Leitungen</li>
+            <li>Vorbeugende Reinigung auf Wunsch</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Abrissarbeiten &amp; Entsorgung</h3>
+          <p>Wir schaffen Platz für Neues – fachgerecht und ordentlich.</p>
+          <ul>
+            <li>Teilabriss im Innenbereich</li>
+            <li>Rückbau von Wänden, Böden etc.</li>
+            <li>Entsorgung von Bauschutt und Material</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER UNS + EINSATZGEBIET -->
+  <section id="ueber-uns">
+    <div class="container two-cols">
+      <div>
+        <h2 class="section-title" style="text-align:left;">Über S&amp;Oks GmbH</h2>
+        <p style="margin-bottom:10px; color:#4b5563; font-size:0.98rem;">
+          S&amp;Oks GmbH ist Ihr regionaler Ansprechpartner für Bau-, Sanierungs-, Reinigungs- und Rohrarbeiten
+          in Burgstädt und Umgebung. Wir verbinden praktisches Handwerk mit zuverlässiger Organisation.
+        </p>
+        <p style="margin-bottom:10px; color:#4b5563; font-size:0.98rem;">
+          Sie bekommen bei uns klare Absprachen, nachvollziehbare Angebote und eine saubere Ausführung –
+          egal ob kleine Reparatur, umfangreiche Sanierung oder kompletter Ausbau.
+        </p>
+        <ul>
+          <li>Ein fester Ansprechpartner für Ihr Projekt</li>
+          <li>Transparente Kommunikation &amp; faire Preise</li>
+          <li>Saubere und zuverlässige Arbeitsweise</li>
+        </ul>
+      </div>
+
+      <div id="einsatzgebiet">
+        <h3>Einsatzgebiet</h3>
+        <p>
+          Unser Firmensitz befindet sich in:
+        </p>
+        <p style="margin:4px 0 8px;">
+          <strong>S&amp;Oks GmbH<br>
+          Siedlungsstraße 1<br>
+          09217 Burgstädt</strong>
+        </p>
+        <p>Wir sind unter anderem tätig in:</p>
+        <ul>
+          <li>Burgstädt und direkte Umgebung</li>
+          <li>Region Mittelsachsen / Raum Chemnitz</li>
+          <li>Weitere Orte auf Anfrage</li>
+        </ul>
+        <p style="margin-top:8px; font-size:0.9rem; color:#4b5563;">
+          Rufen Sie uns an – wir besprechen gemeinsam, was möglich ist und wann wir starten können.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="container">
+      <h2 class="section-title">Kontakt &amp; Angebotsanfrage</h2>
+      <p class="section-intro">
+        Sie planen ein Projekt oder benötigen Unterstützung bei Bau, Sanierung, Reinigung, Rohrarbeiten oder Abriss?
+        Melden Sie sich – wir melden uns zeitnah bei Ihnen zurück.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <p><strong>S&amp;Oks GmbH</strong></p>
+          <p>Siedlungsstraße 1<br>09217 Burgstädt</p>
+          <p style="margin-top:6px;">
+            <strong>Telefon:</strong>
+            <a href="tel:+4917624196776">0176 24196776</a>
+          </p>
+          <p>
+            <strong>E-Mail:</strong>
+            <a href="mailto:s.oks.gmbh@hotmail.com">s.oks.gmbh@hotmail.com</a>
+          </p>
+
+          <div class="contact-highlight">
+            <p><strong>Für eine schnelle Einschätzung hilfreich:</strong></p>
+            <ul style="margin-top:4px; padding-left:18px;">
+              <li>Art des Projekts (z.B. Sanierung, Ausbau, Reinigung, Rohr, Abriss)</li>
+              <li>Kurze Beschreibung des Ist-Zustands</li>
+              <li>Adresse / Ort des Objekts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <!-- Hinweis: Das Formular braucht serverseitige Verarbeitung (z.B. PHP, Form-Dienst) -->
+          <form>
+            <div>
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div>
+              <label for="telefon">Telefon *</label>
+              <input type="tel" id="telefon" name="telefon" required />
+            </div>
+            <div>
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div>
+              <label for="art">Art des Projekts</label>
+              <input type="text" id="art" name="art" placeholder="z.B. Komplettsanierung, Dachausbau, Rohrverstopfung ..." />
+            </div>
+            <div>
+              <label for="adresse">Adresse / Einsatzort</label>
+              <input type="text" id="adresse" name="adresse" />
+            </div>
+            <div>
+              <label for="nachricht">Nachricht *</label>
+              <textarea id="nachricht" name="nachricht" required placeholder="Kurze Beschreibung des Projekts oder Problems"></textarea>
+            </div>
+            <button type="submit">Nachricht senden</button>
+            <p style="font-size:0.8rem; color:0#6b7280; margin-top:4px;">
+              Hinweis: Dieses Formular ist ein Beispiel. Ihr Webentwickler kann es mit Ihrem Mailserver verbinden.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> S&amp;Oks GmbH – Bau, Sanierung, Reinigung &amp; Rohrservice</div>
+    <div class="footer-links">
+      <a href="#">Impressum (noch ergänzen)</a>
+      <a href="#">Datenschutzerklärung (noch ergänzen)</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // aktuelles Jahr im Footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
